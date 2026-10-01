@@ -53,14 +53,50 @@ function generatePlan() {
     }
 
     // Alternative activity based on preference
-    let alternative = "";
-    let cost = 0;
-    let duration = 0;
+   let alternative = "";
+let cost = 0;
+let duration = 0;
+let reason = "";
+
+if (disruption === "weather") {
+
+    alternative = "Indoor Cultural / Museum Visit";
+    cost = 300;
+    duration = 2;
+    reason = "Outdoor activities may be affected by extreme weather.";
+
+}
+else if (disruption === "road") {
+
+    alternative = "Nearby Alternative Attraction";
+    cost = 200;
+    duration = 1.5;
+    reason = "The original route is affected by a road closure.";
+
+}
+else if (disruption === "delay") {
+
+    alternative = "Nearby Short Activity";
+    cost = 150;
+    duration = 1;
+    reason = "A shorter nearby activity helps reduce the impact of the transport delay.";
+
+}
+else if (disruption === "availability") {
+
+    alternative = "Alternative Local Attraction";
+    cost = 250;
+    duration = 2;
+    reason = "The original activity is no longer available.";
+
+}
+else if (disruption === "cancelled") {
 
     if (preference === "nature") {
         alternative = "Nearby Nature / Park Visit";
         cost = 200;
         duration = 2;
+        reason = "the original activity was cancelled,so an alternative matching the travel prference was selected.";
     }
     else if (preference === "food") {
         alternative = "Local Food Experience";
@@ -82,17 +118,20 @@ function generatePlan() {
         cost = 500;
         duration = 2;
     }
-
+}
     // Adjust according to budget
-    if (cost > budget) {
-        alternative = "Nearby Low-Cost Activity";
-        cost = 100;
-    }
+   if (cost > budget) {
+    alternative = "Free Alternative Activity";
+    cost = 0;
+}
 
-    // Adjust according to available time
-    if (duration > time) {
-        duration = time;
-    }
+if (duration > time) {
+    alternative = "Short Nearby Activity";
+    duration = 1;
+}
+
+let remainingBudget = budget - cost;
+let remainingTime = time - duration;
 
     // Replace the first suitable itinerary activity
    let activityFound = false;
@@ -108,6 +147,23 @@ activities = activities.map(item => {
 
     return item;
 });
+if (!activityFound) {
+    result.innerHTML = `
+        <h2>⚠️ Activity Not Found</h2>
+
+        <p>
+            The affected activity
+            <strong>${affectedActivity}</strong>
+            was not found in the itinerary.
+        </p>
+
+        <p>
+            Please check the activity name and try again.
+        </p>
+    `;
+
+    return;
+}
 
     // Create revised itinerary
     let revisedItinerary = activities
@@ -121,12 +177,23 @@ activities = activities.map(item => {
         🚨 <strong>Affected Activity:</strong>
         ${affectedActivity}
     </p>
-
     <p>
         🔄 <strong>New Alternative:</strong>
         ${alternative}
     </p>
+    <p>
+    💰 <strong>Remaining Budget:</strong>
+    ₹${remainingBudget}
+</p>
 
+<p>
+    ⏱️ <strong>Remaining Time:</strong>
+    ${remainingTime} hours
+</p>
+<p>
+    💡 <strong>Why this alternative?</strong>
+    ${reason}
+</p>
     <h3>📅 Revised Itinerary</h3>
 
     <p>
