@@ -282,6 +282,6 @@ app.post("/api/recover", (req, res) => {
 
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT,"0.0.0.0", () => {
     console.log(`Travel Rescue is running on port ${PORT}`);
 });
