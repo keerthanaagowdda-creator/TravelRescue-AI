@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,45 +19,87 @@
 
     <main>
 
+        <!-- TRAVELLER DETAILS -->
+
         <section class="card">
 
             <h2>👤 Traveller Details</h2>
 
             <p class="section-description">
-    Enter your current travel situation and preferences.
-</p>
+                Enter your current travel situation and preferences.
+            </p>
+
             <label>Current Location</label>
-            <input type="text" id="location" placeholder="Example: Bengaluru">
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Example: Bengaluru"
+            >
 
             <label>Destination</label>
-            <input type="text" id="destination" placeholder="Example: Mysuru">
+
+            <input
+                type="text"
+                id="destination"
+                placeholder="Example: Mysuru"
+            >
 
             <label>Remaining Budget (₹)</label>
-            <input type="number" id="budget" placeholder="Example: 2000">
+
+            <input
+                type="number"
+                id="budget"
+                placeholder="Example: 2000"
+            >
 
             <label>Remaining Time (hours)</label>
-            <input type="number" id="time" placeholder="Example: 6">
+
+            <input
+                type="number"
+                id="time"
+                placeholder="Example: 6"
+            >
 
             <label>Travel Preference</label>
 
             <select id="preference">
-                <option value="nature">Nature</option>
-                <option value="food">Food</option>
-                <option value="culture">Culture & History</option>
-                <option value="adventure">Adventure</option>
-                <option value="shopping">Shopping</option>
+
+                <option value="nature">
+                    Nature
+                </option>
+
+                <option value="food">
+                    Food
+                </option>
+
+                <option value="culture">
+                    Culture & History
+                </option>
+
+                <option value="adventure">
+                    Adventure
+                </option>
+
+                <option value="shopping">
+                    Shopping
+                </option>
+
             </select>
 
         </section>
 
+
+        <!-- DISRUPTION -->
 
         <section class="card">
 
             <h2>🚨 What happened?</h2>
 
             <p class="section-description">
-    Select the disruption affecting your journey.
-</p>
+                Select the disruption affecting your journey.
+            </p>
+
             <select id="disruption">
 
                 <option value="cancelled">
@@ -79,64 +122,66 @@
                     Availability Changed
                 </option>
 
-                <option value=""other">
-                Other / Unexpected Problem
-            </option>
-
             </select>
-            <label>Describe the Problem</label>
 
-<textarea
-    id="customProblem"
-    placeholder="Example: My rental vehicle broke down and I cannot reach the next location."
-></textarea>
             <label>Affected Activity</label>
 
-<input
-    type="text"
-    id="affectedActivity"
-    placeholder="Example: Boat Ride"
->
+            <input
+                type="text"
+                id="affectedActivity"
+                placeholder="Example: Boat Ride"
+            >
 
         </section>
 
 
+        <!-- REMAINING ITINERARY -->
+
         <section class="card">
 
             <h2>📅 Remaining Itinerary</h2>
+
             <p class="section-description">
-    Enter the activities that are still remaining in your journey.
-</p>
+                Enter the activities that are still remaining in your journey.
+            </p>
+
             <textarea
                 id="itinerary"
                 placeholder="Example:
 2:00 PM - Museum
 4:00 PM - Boat Ride
 6:00 PM - Dinner
-8:00 PM - Hotel">
-            </textarea>
+8:00 PM - Hotel"></textarea>
 
         </section>
 
+
+        <!-- GENERATE BUTTON -->
 
         <button onclick="generatePlan()">
             🤖 Generate Alternative Plan
         </button>
 
 
-        <section id="result" class="result">
+        <!-- RESULT -->
 
-        </section>
+        <section id="result" class="result"></section>
 
     </main>
 
+
+    <!-- FOOTER -->
 
     <footer>
         <p>Travel Rescue • Smart Travel Recovery Agent</p>
     </footer>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="script.jss.js"></script>
 
 </body>
+
 </html>
+

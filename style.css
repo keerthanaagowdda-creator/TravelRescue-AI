@@ -71,6 +71,15 @@ main {
     font-size: 23px;
 }
 
+/* SECTION DESCRIPTION */
+
+.section-description {
+    margin: -15px 0 20px;
+    color: #71859d;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 /* LABELS */
 
 label {
@@ -94,7 +103,10 @@ textarea {
     color: #ffffff;
     font-size: 15px;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
 
 input:hover,
@@ -109,6 +121,11 @@ textarea:focus {
     border-color: #61dafb;
     box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.12);
     transform: translateY(-1px);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #71859d;
 }
 
 textarea {
@@ -154,6 +171,12 @@ button:active {
     transform: scale(0.98);
 }
 
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* RESULT */
 
 .result {
@@ -182,19 +205,44 @@ button:active {
 .result h2 {
     color: #61dafb;
 }
-/* RESULT DETAILS */
-
-.result p {
-    line-height: 1.7;
-    color: #c8d8eb;
-}
 
 .result h3 {
     margin-top: 25px;
     color: #61dafb;
 }
 
+.result p {
+    line-height: 1.7;
+    color: #c8d8eb;
+}
+
+/* RECOVERY STATUS */
+
+.status-badge {
+    display: inline-block;
+    margin: 5px 0 20px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(46, 213, 115, 0.12);
+    border: 1px solid rgba(46, 213, 115, 0.35);
+    color: #7bed9f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* REVISED ITINERARY */
+
+.itinerary {
+    margin-top: 15px;
+}
+
 .itinerary-item {
+    background: #081625;
+    border: 1px solid #294563;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    color: #dce9f7;
     transition: 0.2s;
 }
 
@@ -202,6 +250,7 @@ button:active {
     border-color: #61dafb;
     transform: translateX(3px);
 }
+
 /* FOOTER */
 
 footer {
@@ -280,37 +329,4 @@ footer {
         padding: 20px 15px;
     }
 }
-.itinerary {
-    margin-top: 15px;
-}
 
-.itinerary-item {
-    background: #081625;
-    border: 1px solid #294563;
-    border-radius: 10px;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    color: #dce9f7;
-}
-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-}
-.status-badge {
-    display: inline-block;
-    margin: 5px 0 20px;
-    padding: 8px 14px;
-    border-radius: 20px;
-    background: rgba(46, 213, 115, 0.12);
-    border: 1px solid rgba(46, 213, 115, 0.35);
-    color: #7bed9f;
-    font-size: 13px;
-    font-weight: 700;
-}
-.section-description {
-    margin: -15px 0 20px;
-    color: #71859d;
-    font-size: 13px;
-    line-height: 1.5;
-}

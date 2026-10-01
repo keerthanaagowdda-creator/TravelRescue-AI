@@ -1,0 +1,25 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.jss.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keerthanaagowdda-creator/TravelRescue-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/keerthanaagowdda-creator/TravelRescue-AI/issues"
+  },
+  "homepage": "https://github.com/keerthanaagowdda-creator/TravelRescue-AI#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
