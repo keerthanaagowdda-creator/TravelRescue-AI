@@ -27,13 +27,17 @@ header h1 {
     margin: 0;
     font-size: 48px;
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
+    text-shadow: 0 4px 20px rgba(97, 218, 251, 0.18);
 }
 
 header p {
-    margin: 12px 0 0;
+    margin: 14px auto 0;
+    max-width: 650px;
     color: #a9bdd8;
     font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* MAIN */
@@ -47,12 +51,18 @@ main {
 /* CARDS */
 
 .card {
-    background: #0d1b2d;
+    background: linear-gradient(145deg, #0d1b2d, #0a1727);
     border: 1px solid #1c3552;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    border-color: #31577d;
+    transform: translateY(-2px);
 }
 
 .card h2 {
@@ -84,12 +94,13 @@ textarea {
     color: #ffffff;
     font-size: 15px;
     outline: none;
-    transition: 0.2s;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #71859d;
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #3b5f82;
 }
 
 input:focus,
@@ -97,6 +108,7 @@ select:focus,
 textarea:focus {
     border-color: #61dafb;
     box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.12);
+    transform: translateY(-1px);
 }
 
 textarea {
@@ -130,6 +142,12 @@ button {
 button:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(255, 71, 87, 0.35);
+    filter: brightness(1.08);
+}
+
+button:focus {
+    outline: 3px solid rgba(97, 218, 251, 0.25);
+    outline-offset: 3px;
 }
 
 button:active {
@@ -142,16 +160,48 @@ button:active {
     margin-top: 28px;
     padding: 30px;
     min-height: 120px;
-    background: #0d1b2d;
+    background: linear-gradient(145deg, #0d1b2d, #0a1727);
     border: 1px solid #1c3552;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    animation: resultAppear 0.35s ease;
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .result h2 {
     color: #61dafb;
 }
+/* RESULT DETAILS */
 
+.result p {
+    line-height: 1.7;
+    color: #c8d8eb;
+}
+
+.result h3 {
+    margin-top: 25px;
+    color: #61dafb;
+}
+
+.itinerary-item {
+    transition: 0.2s;
+}
+
+.itinerary-item:hover {
+    border-color: #61dafb;
+    transform: translateX(3px);
+}
 /* FOOTER */
 
 footer {
@@ -167,23 +217,100 @@ footer {
 @media (max-width: 600px) {
 
     header {
-        padding: 40px 15px;
+        padding: 35px 15px;
     }
 
     header h1 {
-        font-size: 34px;
+        font-size: 32px;
+        line-height: 1.2;
     }
 
     header p {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     main {
         width: 94%;
-        margin-top: 25px;
+        margin: 20px auto 40px;
     }
 
     .card {
-        padding: 22px;
+        padding: 20px;
+        margin-bottom: 18px;
+        border-radius: 16px;
     }
+
+    .card h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    textarea {
+        min-height: 130px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .result {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .result h2 {
+        font-size: 21px;
+    }
+
+    .itinerary-item {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+}
+.itinerary {
+    margin-top: 15px;
+}
+
+.itinerary-item {
+    background: #081625;
+    border: 1px solid #294563;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    color: #dce9f7;
+}
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+.status-badge {
+    display: inline-block;
+    margin: 5px 0 20px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(46, 213, 115, 0.12);
+    border: 1px solid rgba(46, 213, 115, 0.35);
+    color: #7bed9f;
+    font-size: 13px;
+    font-weight: 700;
+}
+.section-description {
+    margin: -15px 0 20px;
+    color: #71859d;
+    font-size: 13px;
+    line-height: 1.5;
 }

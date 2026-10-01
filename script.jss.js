@@ -96,7 +96,7 @@ else if (disruption === "cancelled") {
         alternative = "Nearby Nature / Park Visit";
         cost = 200;
         duration = 2;
-        reason = "the original activity was cancelled,so an alternative matching the travel prference was selected.";
+        reason = "the original activity was cancelled,wants peaceful outdoor experinces,greenery,parks,lakes,waterfalls,viewpoints,or other places";
     }
     else if (preference === "food") {
         alternative = "Local Food Experience";
@@ -149,17 +149,16 @@ activities = activities.map(item => {
 });
 if (!activityFound) {
     result.innerHTML = `
-        <h2>⚠️ Activity Not Found</h2>
+    <h2>🤖 Alternative Travel Plan</h2>
 
-        <p>
-            The affected activity
-            <strong>${affectedActivity}</strong>
-            was not found in the itinerary.
-        </p>
+    <div class="status-badge">
+        ✅ Recovery Plan Generated
+    </div>
 
-        <p>
-            Please check the activity name and try again.
-        </p>
+    <p>
+        🚨 <strong>Affected Activity:</strong>
+        ${affectedActivity}
+    </p>
     `;
 
     return;
@@ -196,8 +195,13 @@ if (!activityFound) {
 </p>
     <h3>📅 Revised Itinerary</h3>
 
-    <p>
-        ${activities.join("<br>")}
-    </p>
+<div class="itinerary">
+    ${activities.map(item => `
+        <div class="itinerary-item">
+            ${item}
+        </div>
+    `).join("")}
+</div>
+
     `;
 }

@@ -22,6 +22,9 @@
 
             <h2>👤 Traveller Details</h2>
 
+            <p class="section-description">
+    Enter your current travel situation and preferences.
+</p>
             <label>Current Location</label>
             <input type="text" id="location" placeholder="Example: Bengaluru">
 
@@ -51,6 +54,9 @@
 
             <h2>🚨 What happened?</h2>
 
+            <p class="section-description">
+    Select the disruption affecting your journey.
+</p>
             <select id="disruption">
 
                 <option value="cancelled">
@@ -73,7 +79,17 @@
                     Availability Changed
                 </option>
 
+                <option value=""other">
+                Other / Unexpected Problem
+            </option>
+
             </select>
+            <label>Describe the Problem</label>
+
+<textarea
+    id="customProblem"
+    placeholder="Example: My rental vehicle broke down and I cannot reach the next location."
+></textarea>
             <label>Affected Activity</label>
 
 <input
@@ -88,7 +104,9 @@
         <section class="card">
 
             <h2>📅 Remaining Itinerary</h2>
-
+            <p class="section-description">
+    Enter the activities that are still remaining in your journey.
+</p>
             <textarea
                 id="itinerary"
                 placeholder="Example:
