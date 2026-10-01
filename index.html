@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Rescue</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚨 Travel Rescue</h1>
+        <p>AI-Powered Travel Disruption Recovery</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <h2>👤 Traveller Details</h2>
+
+            <label>Current Location</label>
+            <input type="text" id="location" placeholder="Example: Bengaluru">
+
+            <label>Destination</label>
+            <input type="text" id="destination" placeholder="Example: Mysuru">
+
+            <label>Remaining Budget (₹)</label>
+            <input type="number" id="budget" placeholder="Example: 2000">
+
+            <label>Remaining Time (hours)</label>
+            <input type="number" id="time" placeholder="Example: 6">
+
+            <label>Travel Preference</label>
+
+            <select id="preference">
+                <option value="nature">Nature</option>
+                <option value="food">Food</option>
+                <option value="culture">Culture & History</option>
+                <option value="adventure">Adventure</option>
+                <option value="shopping">Shopping</option>
+            </select>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>🚨 What happened?</h2>
+
+            <select id="disruption">
+
+                <option value="cancelled">
+                    Activity Cancelled
+                </option>
+
+                <option value="delay">
+                    Transport Delay
+                </option>
+
+                <option value="weather">
+                    Extreme Weather
+                </option>
+
+                <option value="road">
+                    Road Closure
+                </option>
+
+                <option value="availability">
+                    Availability Changed
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>📅 Remaining Itinerary</h2>
+
+            <textarea
+                id="itinerary"
+                placeholder="Example:
+2:00 PM - Museum
+4:00 PM - Boat Ride
+6:00 PM - Dinner
+8:00 PM - Hotel">
+            </textarea>
+
+        </section>
+
+
+        <button onclick="generatePlan()">
+            🤖 Generate Alternative Plan
+        </button>
+
+
+        <section id="result" class="result">
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Travel Rescue • Smart Travel Recovery Agent</p>
+    </footer>
+
+
+    <script src="script.jss.js"></script>
+
+</body>
+</html>
